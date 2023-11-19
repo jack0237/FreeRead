@@ -24,7 +24,7 @@ public class OuvrageEntity extends BaseEntity{
     private String Description;
 
     @ManyToOne
-    @JoinColumn(name = "Subject_idSubject")
+    @JoinColumn(name = "Categorie")
     private CategorieEntity Categorie;
 
 }

@@ -16,4 +16,7 @@ public class DonsEntity extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "Ouvrage")
     private OuvrageEntity Ouvrage;
+
+    @JoinColumn(name = "Utilisateur")
+    private UserEntity Utilisateur;
 }
