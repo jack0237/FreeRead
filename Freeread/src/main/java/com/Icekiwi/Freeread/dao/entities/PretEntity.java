@@ -1,10 +1,16 @@
 package com.Icekiwi.Freeread.dao.entities;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import java.util.Date;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.*;
+import java.util.Date;
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity
+@Table(name = "Pret")
 public class PretEntity extends BaseEntity {
 
     @Column(name = "Motif de pret")
