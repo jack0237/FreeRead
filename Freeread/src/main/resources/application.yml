@@ -1,0 +1,85 @@
+#
+## ----------------------------------------
+## SPRING PROPERTIES
+## ----------------------------------------
+#
+## EMBEDDED SERVER CONFIGURATION (ServerProperties)
+#server.port=7010
+#
+## DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+#spring.datasource.url= jdbc:mysql://localhost:3306/freeread?createDatabaseIfNotExist=true&UserSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTime=UTC
+#spring.datasource.username=root
+#spring.datasource.password=
+#spring.sql.init.mode=never
+#spring.datasource.hikari.max-lifetime = 580000
+#
+## ===============================
+## = JPA / HIBERNATE
+## ===============================
+#spring.jpa.generate-ddl=false
+#spring.jpa.database=MYSQL
+##spring.jpa.database-platform=org.hibernate.spatial.dialect.mysql.MySQLSpatial5InnoDBDialect
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+#
+##Whether to enable support of multipart uploads.default is true
+##spring.servlet.multipart.enabled =true
+#
+##Threshold after which files are written to disk.default is 0B
+#spring.servlet.multipart.file-size-threshold = 3KB
+#
+##Max file size.Default is 1MB
+#spring.servlet.multipart.max-file-size= 20MB
+#
+##Max request size.Default is 10MB
+#spring.servlet.multipart.max-request-size= 20MB
+#
+##Whether to resolve the multipart request lazily at the time of file or parameter access.Default is false
+#spring.servlet.multipart.resolve-lazily=true
+#
+## ===============================
+## = SWAGGER
+## ===============================
+##springdoc.api-docs.path=/documentation
+#
+## ===============================
+## = LIGHT ENERGY
+## ===============================
+#
+##app.name=@project.name@
+##app.version=@project.version@
+##app.description=@project.description@
+##app.enabled-operators=YG
+#
+## ===============================
+## = JWT
+## ===============================
+##lightenergy.jwt.secret=LightEnergyJwtSecretKey
+##lightenergy.jwt.expiration= 900000
+#
+## ===============================
+## = MAIL
+## ===============================
+#
+##spring.mail.host=smtp.gmail.com
+##spring.mail.port=587
+##spring.mail.username=jasonngueguim@gmail.com
+##spring.mail.password=agqbyxltwcqttuet
+##spring.mail.properties.mail.smtp.auth=true
+##spring.mail.properties.mail.smtp.starttls.enable=true
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/freeread?createDatabaseIfNotExist=true&UserSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTime=UTC
+    username: root
+    password: ""
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQLDialect
+server:
+  port: 8082

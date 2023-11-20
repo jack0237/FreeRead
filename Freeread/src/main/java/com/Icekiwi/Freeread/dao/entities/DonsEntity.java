@@ -3,20 +3,18 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "category")
 
+@Table(name = "dons")
 public class DonsEntity extends BaseEntity{
 
-    @ManyToOne
-    @JoinColumn(name = "Ouvrage")
-    private OuvrageEntity Ouvrage;
 
+    @ManyToOne
     @JoinColumn(name = "Utilisateur")
     private UserEntity Utilisateur;
 }

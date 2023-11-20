@@ -1,11 +1,11 @@
 package com.Icekiwi.Freeread.dao.entities;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.UUID;
@@ -13,10 +13,11 @@ import java.util.UUID;
 @Getter
 @Setter
 @MappedSuperclass
+@SequenceGenerator(name = "mySeq", sequenceName = "MY_SEQ")
 public abstract class BaseEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mySeq")
     @Column(name = "id", updatable = false, nullable = false)
     protected Long id;
 

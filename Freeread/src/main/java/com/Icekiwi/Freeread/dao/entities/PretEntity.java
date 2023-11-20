@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 @Getter
 @Setter
@@ -19,11 +19,10 @@ public class PretEntity extends BaseEntity {
     private Date DateRemise;
 
 
-    @OneToMany
-    @JoinColumn(name = "Ouvrage")
+    @ManyToOne
     private OuvrageEntity Ouvrage;
 
-    @JoinColumn(name = "Utilisateur")
+    @ManyToOne
     private UserEntity Utilisateur;
 
 }

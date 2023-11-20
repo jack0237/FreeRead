@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,5 +19,9 @@ public class CategorieEntity extends BaseEntity{
     private String nomCategorie;
     @Column(name = "Description")
     private String Description;
+
+    @ManyToOne
+    @JoinColumn(name = "Ouvrage")
+    private OuvrageEntity ouvrages;
 
 }

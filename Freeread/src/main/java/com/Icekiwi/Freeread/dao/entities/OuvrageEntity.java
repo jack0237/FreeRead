@@ -4,7 +4,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,7 +26,8 @@ public class OuvrageEntity extends BaseEntity{
     private String Description;
 
     @ManyToOne
-    @JoinColumn(name = "Categorie")
+    @JoinColumn(name = "category_id")
     private CategorieEntity Categorie;
+
 
 }
