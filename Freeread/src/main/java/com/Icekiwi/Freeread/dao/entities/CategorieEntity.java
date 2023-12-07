@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 @Table(name = "category")
 public class CategorieEntity extends BaseEntity{
-    @Column(name = "nom")
+    @Column(name = "nomCategorie")
     private String nomCategorie;
     @Column(name = "Description")
     private String Description;

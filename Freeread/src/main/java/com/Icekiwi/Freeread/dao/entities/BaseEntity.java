@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.context.annotation.Configuration;
 
 import java.io.Serializable;
 import java.time.ZonedDateTime;
@@ -13,6 +14,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @MappedSuperclass
+@Configuration
 @SequenceGenerator(name = "mySeq", sequenceName = "MY_SEQ")
 public abstract class BaseEntity implements Serializable {
 
