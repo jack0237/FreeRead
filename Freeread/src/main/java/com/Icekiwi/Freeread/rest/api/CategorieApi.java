@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RequestMapping(value = "/candidature/categorie", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/categorie", produces = MediaType.APPLICATION_JSON_VALUE)
 public interface CategorieApi {
     @PostMapping
     ResponseEntity<CategorieResponse> createCategorie(@Valid @RequestBody CategorieCreateRequest requestDto) throws AlreadyExistsException;
@@ -20,6 +20,7 @@ public interface CategorieApi {
     @GetMapping
     ResponseEntity<CategorieResponse> findCategorie(@RequestParam("offset") int offset, @RequestParam("limit") int limit);
 
-    @PutMapping
-    ResponseEntity<CategorieResponse> updateCategorie(@Valid @RequestBody CategorieCreateRequest requestDto);
+//    @PutMapping("update/{id}")
+//    ResponseEntity<CategorieResponse> updateCategorie(@PathVariable (name = "id") String id,
+//                                                      @RequestParam String);
 }

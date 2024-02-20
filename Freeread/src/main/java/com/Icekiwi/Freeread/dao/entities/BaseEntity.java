@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.Serializable;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @Configuration
 @SequenceGenerator(name = "mySeq", sequenceName = "MY_SEQ")
 public abstract class BaseEntity implements Serializable {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mySeq")
