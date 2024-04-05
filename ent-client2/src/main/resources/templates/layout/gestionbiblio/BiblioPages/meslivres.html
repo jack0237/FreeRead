@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <th:block th:replace="./fragments/_head.html::head"></th:block>
+    <link rel="stylesheet" href="../../../../static/css/main.css">
+</head>
+<body>
+<div class="container-scroller">
+
+    <!-- partial:partials/_navbar.html -->
+
+    <!--_header-->
+    <th:block th:replace="./fragments/_header.html::header"></th:block>
+
+    <!--fin header-->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+        <div class="theme-setting-wrapper">
+            <div id="settings-trigger"><i class="ti-settings"></i></div>
+            <div id="theme-settings" class="settings-panel">
+                <i class="settings-close ti-close"></i>
+                <p class="settings-heading">SIDEBAR SKINS</p>
+                <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                    <div class="img-ss rounded-circle bg-light border mr-3"></div>
+                    Light
+                </div>
+                <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                    <div class="img-ss rounded-circle bg-dark border mr-3"></div>
+                    Dark
+                </div>
+                <p class="settings-heading mt-2">HEADER SKINS</p>
+                <div class="color-tiles mx-0 px-4">
+                    <div class="tiles success"></div>
+                    <div class="tiles warning"></div>
+                    <div class="tiles danger"></div>
+                    <div class="tiles info"></div>
+                    <div class="tiles dark"></div>
+                    <div class="tiles default"></div>
+                </div>
+            </div>
+        </div>
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <th:block th:replace="./fragments/_navBibliotheque.html::navBiblio"></th:block>
+
+        <!-- partial -->
+        <div class="main-panel" th:if="${session.authorithies[0].authority == 'Etudiant'}">
+            <div class="content-wrapper">
+
+                <div class="col-md-12 grid-margin">
+                    <div class="row">
+                        <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                            <h3 class="font-weight-bold">
+                                <span th:text="${session.name}"></span> Voici la liste de tes livres
+                            </h3>
+<!--                            <h6 class="font-weight-normal mb-0">-->
+<!--                                All systems are running smoothly! You have-->
+<!--                                <span class="text-primary">3 unread alerts!</span>-->
+<!--                            </h6>-->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class=" " >
+
+
+                    <div class="c1" >
+                        <div class="c1-c" th:each="livre : ${Subject}">
+                            <img src="image.jpg" alt="category image">  <div class="c1-b">
+                            <h5 class="c1-tt" th:text="${livre.nameSubject}"></h5>
+                            <p class="c1-t">This is the card content. It can contain multiple paragraphs and other HTML elements.</p>
+                            <a href="#" class="btn btn-primary">See More</a> </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+<!--                <div class="container text-center px-5" >-->
+
+<!--                    <div class="row row-cols-4 gx-5">-->
+<!--                        <div class="col">-->
+<!--                            <div class="card" style="width: 18rem;" width="20px" height="30px">-->
+<!--                                <img src="../../../images/biblo/img7.jpg" alt="...">-->
+<!--                                <div class="card-body">-->
+<!--                                    <p > Nom de la categorie</p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+                <!-- content-wrapper ends -->
+
+                <!-- Modal for modlanotes  -->
+                <th:block th:replace="./fragments/_modalsNotes.html::modalsNotes"></th:block>
+
+                <!-- End Modal for  moadlnotes  -->
+
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <th:block th:replace="./fragments/_footer.html::footer"></th:block>
+                </footer>
+                <!-- partial -->
+            </div>
+        <!-- container-scroller -->
+
+        <!-- plugins:js -->
+        <th:block th:replace="./fragments/_js.html::js"></th:block>
+    </div>
+</body>
+</html>

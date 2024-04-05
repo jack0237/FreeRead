@@ -4,32 +4,27 @@
 
     <nav class="sidebar sidebar-offcanvas" id="sidebar" >
         <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{dashboard}">
-                    <i class="bi bi-arrow-left-circle-fill menu-icon "></i>
-                    <span class="menu-title">Retour à l'ENT</span>
-                </a>
-            </li>
+
+<!--      GENERALS      -->
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{dashboard}">
+                        <i class="bi bi-arrow-left-circle-fill menu-icon "></i>
+                        <span class="menu-title">Retour à l'ENT</span>
+                    </a>
+                </li>
+            
+
+
+<!--            END OF GENERAL PART         -->
+
+<!--            Administrator partial  -->
+            
             <li class="nav-item" th:if="${session.authorithies[0].authority =='Admin' }">
                 <a class="nav-link" th:href="@{gestionnote}">
                     <i class="icon-grid menu-icon"></i>
                     <span class="menu-title">Dashboard</span>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:if="${session.authorithies[0].authority =='Etudiant' }" th:href="@{profil}">
-                    <i class="bi bi-people-fill menu-icon"></i>
-                    <span class="menu-title">Mon Profil</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:if="${session.authorithies[0].authority =='Etudiant' }" th:href="@{parcours}"  >
-                    <i class="bi bi-list-columns-reverse menu-icon"></i>
-                    <span class="menu-title">Mon Parcours </span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <span class="app">Impression</span>
             </li>
             <li class="nav-item" th:if="${session.authorithies[0].authority =='Admin' }">
                 <a th:href="@{gestionOuvragebiblio}" class="nav-link" data-target="#bilanAbsModal" href="#" aria-expanded="false" aria-controls="ui-basic" >
@@ -47,7 +42,7 @@
                 <div class="collapse" id="cert">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="#" data-toggle="modal" data-target="#AttestationModal" >Ajouter une Categorie </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="#" data-toggle="modal" data-target="#CertModal">Liste des categories</a></li>
+                        <li class="nav-item"> <a class="nav-link" th:href="@{Ouvrages}" >Ouvrages</a></li>
                     </ul>
                 </div>
             </li>
@@ -61,7 +56,7 @@
                 <div class="collapse" id="etudiant">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="#" data-toggle="modal" data-target="#carteModal">Ajouter un Adherant</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="#" data-toggle="modal" data-target="#classeModal">Liste des Adherants</a></li>
+                        <li class="nav-item"> <a class="nav-link" th:href="@{listLivre}">Liste des Adherants</a></li>
 
                     </ul>
                 </div>
@@ -75,17 +70,47 @@
                 </a>
             </li>
 
-            <li class="nav-item" th:if="${session.authorithies[0].authority =='Etudiant' }">
-                <a class="nav-link" data-toggle="collapse" href="#pv" aria-expanded="false" aria-controls="ui-basic">
+<!--        END OF ADMINISTRATOR PART       -->
+
+
+
+<!--              STUDENT PART              -->
+
+            <li class="nav-item">
+                <a class="nav-link" th:if="${session.authorithies[0].authority =='Etudiant' }" th:href="@{profil}">
+                    <i class="bi bi-people-fill menu-icon"></i>
+                    <span class="menu-title">Mon Profil</span>
+                </a>
+            </li>
+
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" th:if="${session.authorithies[0].authority =='Etudiant' }" th:href="@{parcours}"  >-->
+<!--                    <i class="bi bi-list-columns-reverse menu-icon"></i>-->
+<!--                    <span class="menu-title">Mon Parcours </span>-->
+<!--                </a>-->
+<!--            </li>-->
+
+            <li class="nav-item">
+                <span class="app">Impression</span>
+            </li>
+            <li class="nav-item" th:if="${session.authorithies[0].authority =='Etudiant' }" >
+                <a class="nav-link"  th:href="@{listLivre}" >
                     <i class="icon-layout menu-icon"></i>
-                    <span class="menu-title">Livres emprunté</span>
+                    <span class="menu-title">Mes Categories</span>
+                    <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item" th:if="${session.authorithies[0].authority =='Etudiant' }" >
+                <a class="nav-link"  th:href="@{/}" >
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Mes Livres</span>
                     <i class="menu-arrow"></i>
                 </a>
             </li>
 
         </ul>
     </nav>
-    <!-- partial -->
+<!--    END OF STUDENT PART     -->
 
 
 </th:block>

@@ -76,6 +76,48 @@ public class UserController {
         return "redirect:dashboard";
     }
 
+
+
+    //    Bibliotheque controller
+
+    @GetMapping("/gestionbibliotheque")
+    public String pageProfileBiblio(Model model, HttpSession session){
+        ModalWithHttpHeader.model(model, session);
+        return "layout/gestionbiblio/gestBiblio";
+    }
+
+    @GetMapping("/Ouvrages")
+    public String pageOuvragBiblio(Model model, HttpSession session){
+        ModalWithHttpHeader.model(model, session);
+        return "layout/gestionbiblio/Ouvrages";
+    }
+
+//    @GetMapping("/userbooks")
+//    public String UserbooksPage(Model model, HttpSession session){
+//        ModalWithHttpHeader.model(model, session);
+//        return "layout/gestionbiblio/BiblioPages/meslivres";
+//    }
+
+//    @GetMapping("/listLivre")
+//    public String pagelisteLivre(Model model) {
+//        Modal.model(model);
+//
+//        RestTemplate restTemplate = new RestTemplate();
+//        Object[] livres = restTemplate.getForObject(URL.BASE_URL_BIB + "/Subject", Object[].class);
+//        model.addAttribute("livres", livres);
+//        model.addAttribute("livres", new Enseignant());
+//
+//        return "layout/gestionbiblio/BiblioPages/meslivres";
+//    }
+
+
+//    END Controller
+
+
+
+
+
+
     @GetMapping("/logout")
         public String disconnectUser(Model model,HttpSession session){
             session.invalidate();
@@ -89,22 +131,7 @@ public class UserController {
         return "layout/gestionNote/gestNote";
     }
 
-//    Bibliotheque controller
 
-    @GetMapping("/gestionbibliotheque")
-    public String pageProfileBiblio(Model model, HttpSession session){
-        ModalWithHttpHeader.model(model, session);
-        return "layout/gestionbiblio/gestBiblio";
-    }
-
-    @GetMapping("/gestionOuvragebiblio")
-    public String pageOuvragBiblio(Model model, HttpSession session){
-        ModalWithHttpHeader.model(model, session);
-        return "layout/gestionbiblio/Ouvrages";
-    }
-
-
-//    END Controller
 
     @GetMapping("/profil")
     public String pageProfileEtudiant(Model model,HttpSession session){
