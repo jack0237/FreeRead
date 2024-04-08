@@ -21,7 +21,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping
-public class CategorieController implements SubjectApi {
+public class CategControl implements SubjectApi {
     private final SubjectService subjectService;
 
     @Override

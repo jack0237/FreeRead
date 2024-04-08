@@ -23,6 +23,7 @@ public class SubjectDataResponse extends BaseDto {
 
     public SubjectDataResponse (SubjectEntity entity){
         this.uuid = entity.getUuid();
+
         this.deleted = entity.isDeleted();
         this.createdAt = entity.getCreatedAt();
         this.updatedAt = entity.getUpdatedAt();

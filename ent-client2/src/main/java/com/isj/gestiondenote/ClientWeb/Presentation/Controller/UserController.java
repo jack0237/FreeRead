@@ -80,17 +80,7 @@ public class UserController {
 
     //    Bibliotheque controller
 
-    @GetMapping("/gestionbibliotheque")
-    public String pageProfileBiblio(Model model, HttpSession session){
-        ModalWithHttpHeader.model(model, session);
-        return "layout/gestionbiblio/gestBiblio";
-    }
 
-    @GetMapping("/Ouvrages")
-    public String pageOuvragBiblio(Model model, HttpSession session){
-        ModalWithHttpHeader.model(model, session);
-        return "layout/gestionbiblio/Ouvrages";
-    }
 
 //    @GetMapping("/userbooks")
 //    public String UserbooksPage(Model model, HttpSession session){

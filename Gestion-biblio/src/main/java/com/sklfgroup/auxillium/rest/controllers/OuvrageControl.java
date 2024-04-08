@@ -6,7 +6,6 @@ import com.sklfgroup.auxillium.exceptions.NotFoundException;
 import com.sklfgroup.auxillium.rest.api.ChapterApi;
 import com.sklfgroup.auxillium.rest.dto.requests.chapter.ChapterCreateRequest;
 import com.sklfgroup.auxillium.rest.dto.responses.chapter.ChapterResponse;
-import com.sklfgroup.auxillium.rest.dto.responses.subject.SubjectResponse;
 import com.sklfgroup.auxillium.services.ChapterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RestController
 @RequiredArgsConstructor
-public class ChapterController implements ChapterApi {
+public class OuvrageControl implements ChapterApi {
 
     private final ChapterService chapterService;
 
